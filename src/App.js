@@ -8,7 +8,7 @@ import Pages from "./pages";
 import { setContext } from 'apollo-link-context';
 
 const uri = process.env.API_URI;
-const httpLink = createHttpLink( { uri } );
+const httpLink = createHttpLink( { uri, credentials: "include" } );
 const cache = new InMemoryCache();
 
 const authLink = setContext( ( _, { headers } ) => {
